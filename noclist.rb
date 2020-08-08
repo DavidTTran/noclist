@@ -9,12 +9,13 @@ class Noclist
   end
 
   def display_ids
-    p @ids if @ids
+    return nil if @ids == nil
+    p @ids
   end
 
   private
 
-  def connection(path)
+  def connection(path = nil)
     Faraday.new("http://localhost:8888/#{path}")
   end
 
